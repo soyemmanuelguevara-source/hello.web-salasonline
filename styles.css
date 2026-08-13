@@ -514,7 +514,7 @@ textarea, input, select { font-family:var(--font); }
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 28px;
-    padding-top: calc(var(--nav-h) + 80px);
+    padding-top: calc(var(--nav-h) + 28px);
     padding-bottom: 100px;
     min-height: 100vh;
     display: flex;
@@ -1131,6 +1131,17 @@ textarea, input, select { font-family:var(--font); }
 }
 .testi-author strong { display:block; font-size:.875rem; font-weight:700; }
 .testi-author span { display:block; font-size:.75rem; color:var(--gray-400); margin-top:2px; }
+
+.testi-grid-single { display:flex; justify-content:center; }
+.testi-card-cta {
+    max-width: 560px;
+    width: 100%;
+    text-align: center;
+    padding: 44px 40px;
+}
+.testi-cta-title { font-size:1.35rem; font-weight:800; margin-bottom:12px; letter-spacing:-.01em; }
+.testi-cta-text { font-size:.95rem; color:var(--gray-400); line-height:1.7; margin-bottom:26px; }
+.testi-card-cta .stars { justify-content:center; display:flex; }
 
 /* ═══════════════════════════════════════════
    CTA

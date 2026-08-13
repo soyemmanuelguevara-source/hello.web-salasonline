@@ -334,6 +334,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /* ═══════════════════════════════════════════
+       11. PROCESO — resalta el paso activo al hacer scroll
+    ═══════════════════════════════════════════ */
+    (function() {
+        const stepNums = Array.from(document.querySelectorAll('.process-step .step-num'));
+        if (!stepNums.length) return;
+
+        const setActive = (target) => {
+            stepNums.forEach(el => el.classList.toggle('step-num-red', el === target));
+        };
+
+        setActive(stepNums[0]);
+
+        const stepObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const num = entry.target.querySelector('.step-num');
+                    if (num) setActive(num);
+                }
+            });
+        }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+
+        document.querySelectorAll('.process-step').forEach(step => stepObserver.observe(step));
+    })();
+
 });
 
 /* ═══════════════════════════════════════════
